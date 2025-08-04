@@ -7,29 +7,50 @@
 {% extends "../templates/layouts/base.hubl.html" %}
 
 {% block body %}
-<main class="landing-page-wrapper">
+<main class="relative min-h-screen bg-cover bg-center" style="background-image: url('{{ get_asset_url("../assets/hero-bg.jpg") }}');">
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-20 z-0"></div>
 
-  <header class="site-header">
-    <div class="container flex justify-between items-center py-4">
-      <!-- Logo on the left -->
-      <div class="logo">
-        {# <img={ "src": get_asset_url('../assets/logo.svg') alt: 'LekkeSlaap Logo' class: 'h-8' } /> #}
-      </div>
+  <!-- Navbar -->
+  <header class="relative z-10 py-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6">
+      <!-- Logo -->
+      <img src="{{ get_asset_url('../assets/logo.svg') }}" alt="LekkeSlaap Logo" class="h-10">
 
-      <!-- Right-side links -->
-      <div class="flex items-center space-x-6">
-        <a href="#" class="text-sm text-gray-700 hover:underline">Switch to English</a>
-        <a href="#" class="text-sm text-gray-700 hover:underline">Host with Us</a>
-        <a href="/login" class="text-sm text-blue-600 hover:underline font-medium">Login</a>
+      <!-- Right links -->
+      <div class="flex items-center space-x-4 text-white text-sm font-medium">
+        <a href="#" class="hover:underline">Switch to Afrikaans</a>
+        <a href="#" class="hover:underline">Host with Us</a>
+        <a href="/login" class="hover:underline">Login</a>
+        <button class="ml-4 p-2 rounded-full bg-white text-orange-500">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M3 6h14M3 10h14M3 14h14" />
+          </svg>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero-section text-center py-10">
-    <h1>{{ module.title or "" }}</h1>
-    <p>{{ module.subtitle or "" }}</p>
+  <!-- Hero Form -->
+  <section class="relative z-10 flex items-center justify-center min-h-[80vh] px-4">
+    <div class="bg-gradient-to-br from-[#6a6f39] to-[#9da06e] bg-opacity-90 rounded-xl p-6 w-full max-w-3xl shadow-xl text-white">
+      <h2 class="text-xl font-bold mb-4">Where are you going?</h2>
+      <form class="space-y-4 md:space-y-0 md:grid md:grid-cols-4 md:gap-4 text-gray-800">
+        <input type="text" placeholder="Region or Property Name" class="col-span-2 p-3 rounded border border-gray-300 w-full" />
+        <input type="date" class="p-3 rounded border border-gray-300 w-full" />
+        <input type="date" class="p-3 rounded border border-gray-300 w-full" />
+        <select class="col-span-2 p-3 rounded border border-gray-300 w-full">
+          <option>2 Adults</option>
+          <option>1 Adult</option>
+          <option>3 Adults</option>
+        </select>
+        <button type="submit" class="col-span-2 md:col-span-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded transition">
+          SEARCH ACCOMMODATION
+        </button>
+      </form>
+    </div>
   </section>
 
+ 
 </main>
 {% endblock %}
