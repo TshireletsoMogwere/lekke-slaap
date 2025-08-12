@@ -7,7 +7,7 @@
 {% extends "../templates/layouts/base.hubl.html" %}
 
 {% block body %}
-<main class="relative min-h-screen bg-cover bg-center" style="background-image: url('{{ get_asset_url(assets/logo.svg)}}');">
+<main class="relative min-h-screen bg-cover bg-center" style="background-image: url('{{ get_asset_url(@projects/lekkeslaap/theme/assets/logo.svg) }}')";>
   <!-- Overlay -->
   <div class="absolute inset-0 bg-black bg-opacity-20 z-0"></div>
 
@@ -15,7 +15,7 @@
   <header class="relative z-10 py-4">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6">
       <!-- Logo -->
-      <img src="{{ get_asset_url('assets/logo.svg') }}" alt="LekkeSlaap Logo" class="h-10">
+      <img src="{{ get_asset_url('@projects/lekkeslaap/theme/assets/logo.svg') }}" alt="LekkeSlaap Logo" class="h-10">
 
       <!-- Right links -->
       <div class="flex items-center space-x-4 text-white text-sm font-medium">
