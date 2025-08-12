@@ -7,7 +7,7 @@
 {% extends "../templates/layouts/base.hubl.html" %}
 
 {% block body %}
-<main class="relative min-h-screen bg-cover bg-center" style="background-image: url('{{ get_asset_url("../assets/logo.svg") }}');">
+<main class="relative min-h-screen bg-cover bg-center" style="background-image: url('{{ get_asset_url(assets/logo.svg)}}');">
   <!-- Overlay -->
   <div class="absolute inset-0 bg-black bg-opacity-20 z-0"></div>
 
@@ -15,14 +15,14 @@
   <header class="relative z-10 py-4">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6">
       <!-- Logo -->
-      <img src="{{ get_asset_url('../assets/logo.svg') }}" alt="LekkeSlaap Logo" class="h-10">
+      <img src="{{ get_asset_url('assets/logo.svg') }}" alt="LekkeSlaap Logo" class="h-10">
 
       <!-- Right links -->
       <div class="flex items-center space-x-4 text-white text-sm font-medium">
         <a href="#" class="hover:underline">Switch to Afrikaans</a>
         <a href="#" class="hover:underline">Host with Us</a>
         <a href="/login" class="hover:underline">Login</a>
-        <button class="ml-4 p-2 rounded-full bg-white text-orange-500">
+        <button aria-label="Open Menu" class="ml-4 p-2 rounded-full bg-white text-orange-500">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
             <path d="M3 6h14M3 10h14M3 14h14" />
           </svg>
@@ -33,9 +33,9 @@
 
   <!-- Hero Form -->
   <section class="relative z-10 flex items-center justify-center min-h-[80vh] px-4">
-    <div class="bg-gradient-to-br from-[#6a6f39] to-[#9da06e] bg-opacity-90 rounded-xl p-6 w-full max-w-3xl shadow-xl text-white">
+    <div class="bg-gradient-to-br from-[#5a5f29] to-[#8d9060] bg-opacity-90 rounded-xl p-6 w-full max-w-3xl shadow-xl text-white">
       <h2 class="text-xl font-bold mb-4">Where are you going?</h2>
-      <form class="space-y-4 md:space-y-0 md:grid md:grid-cols-4 md:gap-4 text-gray-800">
+      <form class="grid grid-cols-1 md:grid-cols-4 gap-4 text-gray-800">
         <input type="text" placeholder="Region or Property Name" class="col-span-2 p-3 rounded border border-gray-300 w-full" />
         <input type="date" class="p-3 rounded border border-gray-300 w-full" />
         <input type="date" class="p-3 rounded border border-gray-300 w-full" />
@@ -50,7 +50,5 @@
       </form>
     </div>
   </section>
-
- 
 </main>
 {% endblock %}
