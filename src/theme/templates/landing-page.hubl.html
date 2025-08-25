@@ -8,51 +8,64 @@
 
 
 {% block body %}
-  
-<main class="relative min-h-screen bg-cover bg-center">
+<main class="relative min-h-screen">
 
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-black bg-opacity-20 z-0"></div>
+  <!-- Hero Section -->
+  <section class="relative w-full min-h-[80vh] bg-cover bg-center" 
+           style="background-image: url('https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAABKALzxIgmZrgKA8t6l04C1aDIAfMXGf5bSPoLymHYovcsB6szD?fit=crop&auto=enhance,format,compress&q=80&crop=focalpoint&fp-y=0.5&w=1920&h=1080');">
 
-  <!-- Navbar -->
-  <header class="relative z-10 py-4">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-6">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/20 z-0"></div>
       <!-- Logo -->
       <img src="https://www.lekkeslaap.co.za/cdn/images/brand/ls/logos/logo.svg?hash=4554655dfa" alt="LekkeSlaap Logo" class="h-10">
+    <!-- Top-right buttons -->
+    <div class="absolute top-4 right-4 z-10 flex flex-wrap gap-2">
+      <button class="flex items-center gap-2 bg-white px-4 py-2 rounded shadow text-sm font-medium hover:bg-gray-100">
+        🔄 Switch to Afrikaans
+      </button>
+      <button class="flex items-center gap-2 bg-white px-4 py-2 rounded shadow text-sm font-medium hover:bg-gray-100">
+        🏠 Host with us
+      </button>
+      <button class="flex items-center gap-2 bg-white px-4 py-2 rounded shadow text-sm font-medium hover:bg-gray-100">
+        🔑 Login
+      </button>
+      <button class="flex items-center justify-center bg-white rounded-full w-10 h-10 shadow hover:bg-gray-100">
+        <svg class="w-6 h-6 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M3 6h14M3 10h14M3 14h14" />
+        </svg>
+      </button>
+    </div>
 
-      <!-- Right links -->
-      <div class="flex items-center space-x-4 text-black text-sm font-medium">
-        <a href="#" class="hover:underline">Switch to Afrikaans</a>
-        <a href="#" class="hover:underline">Host with Us</a>
-        <a href="/login" class="hover:underline">Login</a>
-        <button aria-label="Open Menu" class="ml-4 p-2 rounded-full bg-white text-orange-500">
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M3 6h14M3 10h14M3 14h14" />
-          </svg>
-        </button>
+    <!-- Hero Form (left side) -->
+   <div class="relative z-10 flex items-center mt-20">
+  <div class="bg-gradient-to-b from-black/60 to-transparent rounded-xl p-6 w-50 max-w-50 text-white">
+    <h2 class="text-2xl font-semibold mb-4">Where are you going?</h2>
+    <form class="grid grid-cols-1 gap-4 text-gray-800">
+      <div>
+        <input type="text" placeholder="Region or Property Name" class="w-full p-3 rounded border border-gray-300 text-gray-900" />
       </div>
-    </div>
-  </header>
-
-  <!-- Hero Form -->
-  <section class="relative z-10 flex items-center justify-center min-h-[80vh] px-4">
-    <div class="bg-gradient-to-br from-[#5a5f29] to-[#8d9060] bg-opacity-90 rounded-xl p-6 w-full max-w-3xl shadow-xl text-white">
-      <h2 class="text-xl font-bold mb-4">Where are you going?</h2>
-      <form class="grid grid-cols-1 md:grid-cols-4 gap-4 text-gray-800">
-        <input type="text" placeholder="Region or Property Name" class="col-span-2 p-3 rounded border border-gray-300 w-full" />
-        <input type="date" class="p-3 rounded border border-gray-300 w-full" />
-        <input type="date" class="p-3 rounded border border-gray-300 w-full" />
-        <select class="col-span-2 p-3 rounded border border-gray-300 w-full">
-          <option>2 Adults</option>
-          <option>1 Adult</option>
-          <option>3 Adults</option>
-        </select>
-        <button type="submit" class="col-span-2 md:col-span-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded transition">
-          SEARCH ACCOMMODATION
-        </button>
-      </form>
-    </div>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="flex flex-col">
+          <h4 class="mb-1 text-white">Check in</h4>
+          <input type="date" class="p-3 rounded border border-gray-300 text-gray-900 h-10" />
+        </div>
+        <div class="flex flex-col">
+          <h4 class="mb-1 text-white">Check out</h4>
+          <input type="date" class="p-3 rounded border border-gray-300 text-gray-900 h-10" />
+        </div>
+        <div class="flex flex-col">
+          <h4 class="mb-1 text-white">Number of guests</h4>
+          <input type="number" min="1" placeholder="Guests" class="p-3 rounded border border-gray-300 text-gray-900 h-10" />
+        </div>
+      </div>
+      <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 py-3 rounded font-semibold text-white mt-2 transition">
+        SEARCH ACCOMMODATION
+      </button>
+    </form>
+  </div>
+</div>
   </section>
+</main>
 
   <!-- Trending regions-->
 <section class="relative overflow-hidden px-5 bg-[#ffffff]">
