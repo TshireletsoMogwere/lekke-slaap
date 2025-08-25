@@ -10,7 +10,8 @@
   "keywords": [],
   "dependencies": {
     "@hubspot/cms-components": "latest",
-    "react": "^18"
+    "react": "^18",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
     "@hubspot/cms-dev-server": "latest"
