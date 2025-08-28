@@ -1,7 +1,7 @@
 <!--
   templateType: page
   isAvailableForNewContent: true
-  label: LekkeSlaap Landing Page
+  label: About page
 -->
 
 {% extends "../templates/layouts/base.hubl.html" %}
@@ -16,29 +16,38 @@
 
     <!-- Overlay -->
     <div class="absolute inset-0 bg-black/20 z-0"></div>
+     
+     <!-- Top Navigation -->
+    <div class="absolute top-0 left-0 right-0 flex items-center justify-between p-4 relative">
+
       <!-- Logo -->
       <img src="https://www.lekkeslaap.co.za/cdn/images/brand/ls/logos/logo.svg?hash=4554655dfa" alt="LekkeSlaap Logo" class="h-10">
-    <!-- Top-right buttons -->
-    <div class="absolute top-4 right-4 z-10 flex flex-wrap gap-2">
-      <button class="flex items-center gap-2 bg-white px-4 py-2 rounded shadow text-sm font-medium hover:bg-gray-100">
-        🔄 Switch to Afrikaans
-      </button>
-      <button class="flex items-center gap-2 bg-white px-4 py-2 rounded shadow text-sm font-medium hover:bg-gray-100">
-        🏠 Host with us
-      </button>
-      <button class="flex items-center gap-2 bg-white px-4 py-2 rounded shadow text-sm font-medium hover:bg-gray-100">
-        🔑 Login
-      </button>
-      <button class="flex items-center justify-center bg-white rounded-full w-10 h-10 shadow hover:bg-gray-100">
-        <svg class="w-6 h-6 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M3 6h14M3 10h14M3 14h14" />
-        </svg>
-      </button>
-    </div>
 
+      <!-- Right Side -->
+      <div class="flex items-center gap-4">
+        <a href="?lang=af" class="text-white hover:underline hidden md:inline">Afrikaans</a>
+        <a href="/host" class="text-white hover:underline hidden md:inline">Host with Us</a>
+        <a href="/login" class="px-4 py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 hidden md:inline">Login</a>
+
+         <!-- Hamburger Button -->
+        <button id="menuToggle" class="flex items-center justify-center bg-white rounded-full w-10 h-10 shadow hover:bg-gray-100">
+          <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Dropdown Menu -->
+      <div id="dropdownMenu" class="hidden absolute right-4 top-16 bg-white shadow-lg rounded-lg w-56 py-2 z-50">
+        <a href="/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Homepage</a>
+        <a href="/about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About Us</a>
+        <a href="/contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact Us</a>
+        <a href="/login" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Login</a>
+      </div>
+    </div>
     <!-- Hero Form (left side) -->
-   <div class="relative z-10 flex items-center mt-20">
-  <div class="bg-gradient-to-b from-black/60 to-transparent rounded-xl p-6 w-50 max-w-50 text-white">
+   <div class="relative z-10 flex items-center">
+  <div class="bg-gradient-to-b from-black/60 to-transparent rounded-xl p-6 w-50 max-w-50 text-white mt-40">
     <h2 class="text-2xl font-semibold mb-4">Where are you going?</h2>
     <form class="grid grid-cols-1 gap-4 text-gray-800">
       <div>
@@ -210,7 +219,8 @@
                 <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
               </svg>
             </button>
-            <img src="https://via.placeholder.com/320x200?text=Langfontein+Farm" 
+                  <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAAa81da8ee37ea5aa1cf009a5b327290123f27c5ecdd2c3f34eaa1f7161024532214a382a518893c92623239b8ef87fd9c5d2a?w=2400&fit=crop&auto=enhance,format,compress&q=80" 
+  
                  alt="Langfontein Farm Cottage" 
                  class="w-full h-48 object-cover rounded-lg">
             <div class="mt-3">
@@ -241,7 +251,7 @@
                 <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
               </svg>
             </button>
-            <img src="https://via.placeholder.com/320x200?text=Steynskraal+Gasteplaas" 
+            <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAAf54fa691805c425e86589febb1b5ce16b4785075deb9db74cec0581a04e4ed9de7f5f8e63ce9405d9d46acb5c8487579af96?w=2400&fit=crop&auto=enhance,format,compress&q=80" 
                  alt="Steynskraal Gasteplaas" 
                  class="w-full h-48 object-cover rounded-lg">
             <div class="mt-3">
@@ -272,7 +282,7 @@
                 <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
               </svg>
             </button>
-            <img src="https://via.placeholder.com/320x200?text=The+Riverstone+House" 
+            <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAA674c77f416bdbe122cd08cbc740eab7903474543dbcc954ce8c99afc6552fba27034b5e702420622627cb8a1dd3a2a01f753?fit=crop&auto=enhance,format,compress&q=80&w=1600&ar=1:1" 
                  alt="The Riverstone House" 
                  class="w-full h-48 object-cover rounded-lg">
             <div class="mt-3">
@@ -304,7 +314,7 @@
                 <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
               </svg>
             </button>
-            <img src="https://via.placeholder.com/320x200?text=Copperleigh+Trout+Lodge" 
+            <img src="https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAA06512333b933dd49a0c8e79191ad7ca4525441b447696a18e6406799b4a1b84e78332fdf61a9f78b0b227aff62a14dd96c62?fit=crop&auto=enhance,format,compress&q=80&w=1600&ar=1:1" 
                  alt="Copperleigh Trout Lodge" 
                  class="w-full h-48 object-cover rounded-lg">
             <div class="mt-3">
@@ -332,7 +342,7 @@
   </div>
 </section>
 <!-- Newsletter Section -->
-<section class="max-w-screen-xxl mx-auto relative py-12 px-6 bg-[#f9f9f9] rounded-lg mt-10">
+<section class="max-w-screen-xxl mx-auto relative py-12 px-6 bg-white rounded-lg mt-10">
   <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
 
     <!-- Left Column (text + form) -->
@@ -359,15 +369,10 @@
     </div>
 
     <!-- Right Column (images) -->
-    <div class="lg:w-1/2 w-full grid grid-cols-2 gap-4">
-      <img src="https://tvg-newsletter.imgix.net/TG/744/7aa4a9fd-3a7d-4bdb-845d-bc395cc5ab58.jpg?w=400&h=300&fit=crop" 
-           class="rounded-lg shadow-md object-cover">
-      <img src="https://tvg-newsletter.imgix.net/TG/744/e0e1d8af-5c54-41c5-a6d6-87aa8f82aa5e.jpg?w=400&h=300&fit=crop" 
-           class="rounded-lg shadow-md object-cover">
-      <img src="https://tvg-newsletter.imgix.net/TG/744/c50d0f02-13de-4f93-93cf-0b35a7cfc71c.jpg?w=400&h=300&fit=crop" 
-           class="rounded-lg shadow-md object-cover">
-      <img src="https://tvg-newsletter.imgix.net/TG/744/56c07b2e-9888-4dbf-91a6-c4f4829159c0.jpg?w=400&h=300&fit=crop" 
-           class="rounded-lg shadow-md object-cover">
+    <div class="">
+      <img src="https://tvg-newsletter.imgix.net/TG/744/c0bcab30-4470-443e-bfaa-df2009459dad.png?fit=crop&w=675&h=480&fp-x=0&fp-y=0&fp-z=1&auto=compress&q=80" 
+           class=" object-cover">
+    
     </div>
 
   </div>
@@ -375,23 +380,39 @@
 
 
 
-<script>
-  const carouselWrapper = document.getElementById('carousel-wrapper');
-  const carousel = document.getElementById('carousel');
-  const next = document.getElementById('next');
-  const prev = document.getElementById('prev');
+  <!-- Scripts -->
+  <script>
+    // Carousel functionality
+    const carouselWrapper = document.getElementById('carousel-wrapper');
+    const carousel = document.getElementById('carousel');
+    const next = document.getElementById('next');
+    const prev = document.getElementById('prev');
+    const scrollAmount = carousel.children[0].offsetWidth + 8; 
 
-  // Width of one item + gap
-  const scrollAmount = carousel.children[0].offsetWidth + 8; 
+    next.addEventListener('click', () => {
+      carouselWrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+    prev.addEventListener('click', () => {
+      carouselWrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
 
-  next.addEventListener('click', () => {
-    carouselWrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-  });
+    // Hamburger menu toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('menuToggle');
+      const dropdownMenu = document.getElementById('dropdownMenu');
 
-  prev.addEventListener('click', () => {
-    carouselWrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-  });
-</script>
+      menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdownMenu.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!dropdownMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+          dropdownMenu.classList.add('hidden');
+        }
+      });
+    });
+  </script>
 
 
 </main>

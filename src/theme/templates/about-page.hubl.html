@@ -1,398 +1,204 @@
-<!--
-  templateType: page
-  isAvailableForNewContent: true
-  label: About page
--->
-
 {% extends "../templates/layouts/base.hubl.html" %}
 
-
 {% block body %}
+<main class="relative">
 <main class="relative min-h-screen">
 
   <!-- Hero Section -->
-  <section class="relative w-full min-h-[80vh] bg-cover bg-center" 
-           style="background-image: url('https://travelground.imgix.net/AAEAAQAAAAAAAAAAAAAABKALzxIgmZrgKA8t6l04C1aDIAfMXGf5bSPoLymHYovcsB6szD?fit=crop&auto=enhance,format,compress&q=80&crop=focalpoint&fp-y=0.5&w=1920&h=1080');">
-
+  <section class="relative w-full min-h-[80vh] bg-white">
+          
     <!-- Overlay -->
-    <div class="absolute inset-0 bg-black/20 z-0"></div>
+    
+     
+     <!-- Top Navigation -->
+    <div class="absolute top-0 left-0 right-0 flex items-center justify-between pl-20 relative">
+
       <!-- Logo -->
       <img src="https://www.lekkeslaap.co.za/cdn/images/brand/ls/logos/logo.svg?hash=4554655dfa" alt="LekkeSlaap Logo" class="h-10">
-    <!-- Top-right buttons -->
-    <div class="absolute top-4 right-4 z-10 flex flex-wrap gap-2">
-      <button class="flex items-center gap-2 bg-white px-4 py-2 rounded shadow text-sm font-medium hover:bg-gray-100">
-        🔄 Switch to Afrikaans
-      </button>
-      <button class="flex items-center gap-2 bg-white px-4 py-2 rounded shadow text-sm font-medium hover:bg-gray-100">
-        🏠 Host with us
-      </button>
-      <button class="flex items-center gap-2 bg-white px-4 py-2 rounded shadow text-sm font-medium hover:bg-gray-100">
-        🔑 Login
-      </button>
-      <button class="flex items-center justify-center bg-white rounded-full w-10 h-10 shadow hover:bg-gray-100">
-        <svg class="w-6 h-6 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M3 6h14M3 10h14M3 14h14" />
-        </svg>
-      </button>
-    </div>
 
-    <!-- Hero Form (left side) -->
-   <div class="relative z-10 flex items-center mt-20">
-  <div class="bg-gradient-to-b from-black/60 to-transparent rounded-xl p-6 w-50 max-w-50 text-white">
-    <h2 class="text-2xl font-semibold mb-4">Where are you going?</h2>
-    <form class="grid grid-cols-1 gap-4 text-gray-800">
-      <div>
-        <input type="text" placeholder="Region or Property Name" class="w-full p-3 rounded border border-gray-300 text-gray-900" />
+      <!-- Right Side -->
+      <div class="flex items-center gap-4">
+      
+           <div>
+        <input type="text" placeholder="Where are you going?" class="p-3 rounded border border-gray-300 text-gray-900" />
       </div>
-      <div class="grid grid-cols-3 gap-4">
-        <div class="flex flex-col">
-          <h4 class="mb-1 text-white">Check in</h4>
-          <input type="date" class="p-3 rounded border border-gray-300 text-gray-900 h-10" />
-        </div>
-        <div class="flex flex-col">
-          <h4 class="mb-1 text-white">Check out</h4>
-          <input type="date" class="p-3 rounded border border-gray-300 text-gray-900 h-10" />
-        </div>
-        <div class="flex flex-col">
-          <h4 class="mb-1 text-white">Number of guests</h4>
-          <input type="number" min="1" placeholder="Guests" class="p-3 rounded border border-gray-300 text-gray-900 h-10" />
-        </div>
+
+         <!-- Search Button -->
+        <button id="menuToggle" class="flex items-center justify-center bg-white rounded-full w-10 h-10 shadow hover:bg-gray-100">
+          <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
       </div>
-      <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 py-3 rounded font-semibold text-white mt-2 transition">
-        SEARCH ACCOMMODATION
-      </button>
-    </form>
+</div>
+
+    <!-- About  US -->
+   <div class="relative  flex items-center mt-20">
+   <img src="https://tripco-static.imgix.net/misc/about_header_banner_en.png?auto=enhance%2Cformat%2Ccompress&fit=crop&crop=center&q=80&ixlib=react-9.9.0&w=1920" class="p-20">
   </div>
 </div>
   </section>
 </main>
+  <!-- Our Story Section -->
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <div class=" gap-12 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+          Our Story
+        </h2>
+        <p class="text-gray-700 text-lg mb-6">
+        
+Founded in 2013, LekkeSlaap has grown from a proudly South African startup into the country’s leading online travel agency.
+        </p>
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-  <!-- Trending regions-->
-<section class="relative overflow-hidden px-5 bg-[#ffffff]">
-  <h3 class="text-2xl mb-4">Trending regions</h3>
-
-  <div class="flex items-center">
-    <!-- Left arrow -->
-    <button id="prev" class="p-2 bg-gray-200 rounded-full mr-2 hover:bg-gray-300">
-      &#8592;
-    </button>
-
-    <!-- Images wrapper -->
-    <div id="carousel-wrapper" class="overflow-x-hidden flex-1">
-      <div id="carousel" class="flex gap-2">
-        <!-- 10 images -->
-        <div class="flex-none w-1/5 p-2">
-          <img src="https://tvg-newsletter.imgix.net/TG/744/e8d97bcb-a030-48f5-a84a-a08d1e2f4289.jpg?fit=crop&auto=enhance,format,compress&q=80&w=560&h=420" class="w-full h-auto rounded-lg">
-        </div>
-        <div class="flex-none w-1/5 p-2">
-          <img src="https://tvg-newsletter.imgix.net/TG/744/01a3a909-48dc-4da5-ba85-6418879f40e6.jpg?fit=crop&auto=enhance,format,compress&q=80&w=560&h=420" class="w-full h-auto rounded-lg">
-        </div>
-        <div class="flex-none w-1/5 p-2">
-          <img src="https://tvg-newsletter.imgix.net/TG/744/02dbc367-e4a6-4d66-a9e1-b0a0864327e4.jpg?fit=crop&auto=enhance,format,compress&q=80&w=560&h=420" class="w-full h-auto rounded-lg">
-        </div>
-        <div class="flex-none w-1/5 p-2">
-          <img src="https://tvg-newsletter.imgix.net/TG/744/16c66bb7-7058-4447-8088-c55daf13ec84.jpg?fit=crop&auto=enhance,format,compress&q=80&w=560&h=420" class="w-full h-auto rounded-lg">
-        </div>
-        <div class="flex-none w-1/5 p-2">
-          <img src="https://tvg-newsletter.imgix.net/TG/744/87a14e9f-e194-4d83-8060-ca5662dcf030.jpg?fit=crop&auto=enhance,format,compress&q=80&crop=focalpoint&fp-x=0.6&w=560&h=420" class="w-full h-auto rounded-lg">
-        </div>
-        <div class="flex-none w-1/5 p-2">
-          <img src="https://tvg-newsletter.imgix.net/TG/744/02dbc367-e4a6-4d66-a9e1-b0a0864327e4.jpg?fit=crop&auto=enhance,format,compress&q=80&w=560&h=420" class="w-full h-auto rounded-lg">
-        </div>
-        <div class="flex-none w-1/5 p-2">
-          <img src="https://tvg-newsletter.imgix.net/TG/744/a2850b54-d233-4a84-9977-57f575b50a7f.jpg?fit=crop&auto=enhance,format,compress&q=80&w=560&h=420" class="w-full h-auto rounded-lg">
-        </div>
-        <div class="flex-none w-1/5 p-2">
-          <img src="https://tvg-newsletter.imgix.net/TG/744/1c0f5d77-dfb4-44c1-a48c-7b921b3085d0.jpg?fit=crop&auto=enhance,format,compress&q=80&w=560&h=420" class="w-full h-auto rounded-lg">
-        </div>
-        <div class="flex-none w-1/5 p-2">
-          <img src="https://tvg-newsletter.imgix.net/TG/744/47471f9e-0706-4442-987e-bcf6d599538b.jpg?fit=crop&auto=enhance,format,compress&q=80&w=560&h=420" class="w-full h-auto rounded-lg">
-        </div>
-        <div class="flex-none w-1/5 p-2">
-          <img src="https://tvg-newsletter.imgix.net/TG/744/5c6a6f7b-af9c-4207-87aa-7906a2d81f75.jpg?fit=crop&auto=enhance,format,compress&q=80&w=560&h=420" class="w-full h-auto rounded-lg">
-        </div>
+      </div>
+      <div>
+        <img src="https://tripco-static.imgix.net/misc/about-us-faded-beach-house.png?auto=enhance%2Cformat%2Ccompress&fit=crop&ixlib=react-9.9.0&q=80&w=1110&h=300&dpr=2">
       </div>
     </div>
+    </div>
+  </section>
 
-    <!-- Right arrow -->
-    <button id="next" class="p-2 bg-gray-200 rounded-full ml-2 hover:bg-gray-300">
-      &#8594;
-    </button>
-  </div>
-</section>
-
-<!-- Rewards Section -->
-<section class="max-w-screen-xxl mx-auto relative py-2 md:py-4 px-4 bg-[#f5f5f5]">
+  <!-- Support Section -->
+<section class="max-w-screen-xxl mx-auto relative p-20 items-center">
   <div class="flex flex-col lg:flex-row justify-between items-start gap-6">
 
     <!-- Left Column -->
     <div class="flex flex-col items-start lg:w-1/2 w-full">
-      <img src="https://www.lekkeslaap.co.za/cdn/images/stays/components/rewards/rewards-badge.svg?hash=aac374e41c" 
-           class="h-36 w-36 mb-3">
-      <h4 class="text-2xl font-semibold mb-2">Become a member of LekkeSlaap Rewards!</h4>
-      <p class="text-base text-gray-700">Gain access to discounts on lekke stays like never before.</p>
+    <h2>How we support you</h2>
+  
+      <p class="text-base text-gray-700">At LekkeSlaap, we believe in making travel as seamless and stress-free as possible. That’s why we offer a smooth booking process backed by personal customer support from our proudly local staff, available every day of the year until midnight.
+
+</p>
     </div>
 
     <!-- Right Column -->
-    <div class="flex flex-col justify-between lg:w-1/2 w-full mt-20 lg:mt-10 text-gray-700">
-      <ul class="space-y-2">
-        <li class="flex items-start gap-2">
-          <span class="text-gray-500">🏷️</span>
-          <span>Get up to <strong>15% off</strong> on all your stays at our Rewards Partners</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-gray-500">🏷️</span>
-          <span>Valid at <strong>thousands of places</strong> chosen based on a history of trust, including great reviews, many bookings and swift responses</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-gray-500">🏷️</span>
-          <span>You’ll get <strong>free vouchers</strong> to book stays at our Rewards Partners on Tier 2 of LekkeSlaap Rewards</span>
-        </li>
-      </ul>
-      <button class="mt-4 bg-[#d45d13] text-white py-2 px-4 rounded font-semibold hover:bg-gray-500 w-52 h-10">
-        FIND OUT MORE
-      </button>
+    <div class="flex flex-col items-start lg:w-1/2 w-full">
+    <h2>How we support you</h2>
+  
+      <p class="text-base text-gray-700">We’re deeply committed to showcasing the beauty of our country, one unforgettable stay at a time. From holiday homes, guest houses, B&Bs, hotels, resorts and game lodges, we offer something for every taste, need and budget.
+
+</p>
     </div>
 
   </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
+        <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">35k+ Stays Across SA</h3>
+          <p class="text-gray-600 text-sm">A huge variety of properties for all budgets and needs.</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Dedicated Customer Service</h3>
+          <p class="text-gray-600 text-sm">Local, friendly support every day until midnight.</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Top-Rated by Our Guests</h3>
+          <p class="text-gray-600 text-sm">Consistently high ratings from thousands of travellers.</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">World-Class Experience</h3>
+          <p class="text-gray-600 text-sm">A seamless booking platform with modern design.</p>
+        </div>
+        <div class="mt-10">
+        <hr class="w-[86vw]">
+        </div>
 </section>
 
-
-<!-- As featured on social media Section -->
-<section class="max-w-screen-xxl mx-auto relative py-8 px-4 bg-white">
-  <div class="flex items-center justify-between mb-6">
-    <div class="flex items-center gap-2">
-      <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"/>
-      </svg>
-      <h3 class="text-2xl font-semibold">As featured on social media</h3>
-    </div>
-    <div class="flex items-center gap-2">
-      <a href="#" class="text-orange-500 hover:text-orange-600">
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M7.75 2.75C5.99 2.75 4.75 3.99 4.75 5.75v12.5c0 1.76 1.24 3 3 3h8.5c1.76 0 3-1.24 3-3V5.75c0-1.76-1.24-3-3-3h-8.5zm4.25 15.25c-2.07 0-3.75-1.68-3.75-3.75s1.68-3.75 3.75-3.75 3.75 1.68 3.75 3.75-1.68 3.75-3.75 3.75zm3.75-9.75c-.69 0-1.25-.56-1.25-1.25S15.06 5.75 15.75 5.75 17 6.31 17 7s-.56 1.25-1.25 1.25z"/>
-        </svg>
-      </a>
-      <a href="#" class="text-blue-600 hover:text-blue-700">
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-
-  <div class="relative">
-    <!-- Left arrow -->
-    <button id="featured-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-white rounded-full shadow-lg hover:bg-gray-50">
-      <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-      </svg>
-    </button>
-
-    <!-- Right arrow -->
-    <button id="featured-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-white rounded-full shadow-lg hover:bg-gray-50">
-      <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-      </svg>
-    </button>
-
-    <!-- Cards wrapper -->
-    <div id="featured-wrapper" class="overflow-hidden">
-      <div id="featured-carousel" class="flex gap-6 transition-transform duration-300">
-        
-        <!-- Card 1 -->
-        <div class="flex-none w-80">
-          <div class="relative group cursor-pointer">
-            <span class="absolute top-3 left-3 bg-orange-100 text-orange-600 px-2 py-1 rounded text-sm font-medium z-10">Rewards</span>
-            <span class="absolute top-3 right-3 bg-orange-500 text-white px-2 py-1 rounded text-sm font-medium z-10">10% off!</span>
-            <button class="absolute top-3 right-12 z-10 p-2 text-white hover:text-red-500">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
-              </svg>
-            </button>
-            <img src="https://via.placeholder.com/320x200?text=Langfontein+Farm" 
-                 alt="Langfontein Farm Cottage" 
-                 class="w-full h-48 object-cover rounded-lg">
-            <div class="mt-3">
-              <h4 class="font-semibold text-lg mb-1">Langfontein Farm Cotta...</h4>
-              <p class="text-gray-600 text-sm mb-2">Self Catering in Graaff-Reinet</p>
-              <div class="flex items-center gap-1 mb-2">
-                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                </svg>
-                <span class="text-sm">4.9 (83 Reviews)</span>
-              </div>
-              <div class="flex items-center justify-between">
-                <div class="text-right">
-                  <p class="text-sm text-gray-600">from</p>
-                  <p class="text-2xl font-bold">R1 350</p>
-                  <p class="text-sm text-gray-600">For 2 ppl per night</p>
-                </div>
-              </div>
-            </div>
-          </div>
+  <!-- What We Offer Section -->
+  <section class=" ">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text- md:text-2xl text-gray-800 mb-12">
+        Why Choose LekkeSlaap?
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">35k+ Stays Across SA</h3>
+          <p class="text-gray-600 text-sm">A huge variety of properties for all budgets and needs.</p>
         </div>
-
-        <!-- Card 2 -->
-        <div class="flex-none w-80">
-          <div class="relative group cursor-pointer">
-            <button class="absolute top-3 right-3 z-10 p-2 text-white hover:text-red-500">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
-              </svg>
-            </button>
-            <img src="https://via.placeholder.com/320x200?text=Steynskraal+Gasteplaas" 
-                 alt="Steynskraal Gasteplaas" 
-                 class="w-full h-48 object-cover rounded-lg">
-            <div class="mt-3">
-              <h4 class="font-semibold text-lg mb-1">Steynskraal Gasteplaas</h4>
-              <p class="text-gray-600 text-sm mb-2">Self Catering in Beaufort West</p>
-              <div class="flex items-center gap-1 mb-2">
-                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                </svg>
-                <span class="text-sm">5.0 (130 Reviews)</span>
-              </div>
-              <div class="flex items-center justify-between">
-                <div class="text-right">
-                  <p class="text-sm text-gray-600">from</p>
-                  <p class="text-2xl font-bold">R2 500</p>
-                  <p class="text-sm text-gray-600">per night, sleeps 4</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Dedicated Customer Service</h3>
+          <p class="text-gray-600 text-sm">Local, friendly support every day until midnight.</p>
         </div>
-
-        <!-- Card 3 -->
-        <div class="flex-none w-80">
-          <div class="relative group cursor-pointer">
-            <button class="absolute top-3 right-3 z-10 p-2 text-white hover:text-red-500">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
-              </svg>
-            </button>
-            <img src="https://via.placeholder.com/320x200?text=The+Riverstone+House" 
-                 alt="The Riverstone House" 
-                 class="w-full h-48 object-cover rounded-lg">
-            <div class="mt-3">
-              <h4 class="font-semibold text-lg mb-1">The Riverstone House</h4>
-              <p class="text-gray-600 text-sm mb-2">Self Catering in Breede River ...</p>
-              <div class="flex items-center gap-1 mb-2">
-                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                </svg>
-                <span class="text-sm">4.8 (23 Reviews)</span>
-              </div>
-              <div class="flex items-center justify-between">
-                <div class="text-right">
-                  <p class="text-sm text-gray-600">from</p>
-                  <p class="text-2xl font-bold">R1 950</p>
-                  <p class="text-sm text-gray-600">For 2 ppl per night</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Top-Rated by Our Guests</h3>
+          <p class="text-gray-600 text-sm">Consistently high ratings from thousands of travellers.</p>
         </div>
-
-        <!-- Card 4 -->
-        <div class="flex-none w-80">
-          <div class="relative group cursor-pointer">
-            <span class="absolute top-3 left-3 bg-orange-100 text-orange-600 px-2 py-1 rounded text-sm font-medium z-10">Rewards</span>
-            <button class="absolute top-3 right-3 z-10 p-2 text-white hover:text-red-500">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
-              </svg>
-            </button>
-            <img src="https://via.placeholder.com/320x200?text=Copperleigh+Trout+Lodge" 
-                 alt="Copperleigh Trout Lodge" 
-                 class="w-full h-48 object-cover rounded-lg">
-            <div class="mt-3">
-              <h4 class="font-semibold text-lg mb-1">Copperleigh Trou...</h4>
-              <p class="text-gray-600 text-sm mb-2">Self Catering in Nata...</p>
-              <div class="flex items-center gap-1 mb-2">
-                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                </svg>
-                <span class="text-sm">4.9 (8 Reviews)</span>
-              </div>
-              <div class="flex items-center justify-between">
-                <div class="text-right">
-                  <p class="text-sm text-gray-600">from</p>
-                  <p class="text-2xl font-bold">R2 150</p>
-                  <p class="text-sm text-gray-600">For 2 ppl per night</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">World-Class Experience</h3>
+          <p class="text-gray-600 text-sm">A seamless booking platform with modern design.</p>
         </div>
-
+        <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Get Rewarded Instantly</h3>
+          <p class="text-gray-600 text-sm">Benefit from promotions and loyalty rewards.</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Support Local Tourism</h3>
+          <p class="text-gray-600 text-sm">We help local property owners grow their businesses.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- Newsletter Section -->
-<section class="max-w-screen-xxl mx-auto relative py-12 px-6 bg-[#f9f9f9] rounded-lg mt-10">
-  <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+  </section>
 
-    <!-- Left Column (text + form) -->
-    <div class="lg:w-1/2 w-full">
-      <div class="flex items-center gap-2 mb-4">
-        <svg class="w-6 h-6 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M10 2L2 7v11h16V7l-8-5zM4 9v7h12V9l-6-4-6 4z" />
-        </svg>
-        <h3 class="text-2xl font-semibold">Join our newsletter and never miss out on an adventure!</h3>
+  <!-- Our Partners Section -->
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="md:text-2xl text-gray-800 mb-12">
+      Our Partners
+    </h2>
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition">
+         <img src="https://tvg-newsletter.imgix.net/LS/693/ffc09d1e-c053-4ee6-b2a1-6b4d184e3fb8.png?auto=enhance%2Cformat%2Ccompress&fit=crop&ixlib=react-9.9.0&q=80&w=128&h=61&dpr=2" alt="Sanlam" class="h-16">
+          <p class="text-gray-600 text-sm mt-5">Book the ultimate dream stay! Sanlam Reality members can save up to 30% on their stays!</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition">
+        <img src="https://tvg-newsletter.imgix.net/LS/693/4ce13489-7c8b-4b08-9217-a8f6b0e25095.png?auto=enhance%2Cformat%2Ccompress&fit=crop&ixlib=react-9.9.0&q=80&w=128&h=64&dpr=2" alt="Sanlam" class="h-16">
+          <p class="text-gray-600 text-sm mt-5">A holiday you'll never forget! Get up to 30% off stays at over 25,000 places, via Edgarsclubtravel.co.za.</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition">
+        <img src="https://tvg-newsletter.imgix.net/LS/693/dee61967-e178-4ce5-838d-2653ed5cd405.svg?auto=enhance%2Cformat%2Ccompress&fit=crop&ixlib=react-9.9.0&q=80&w=128&h=48.75&dpr=2" alt="Sanlam" class="h-16">
+          <p class="text-gray-600 text-sm mt-5">With over 55 car rental branches located nationwide, book your ride now!</p>
+        </div>
+    </div>
+  </section>
+
+  <!-- Awards Section -->
+  <section class="bg-gray-100 py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+        Awards & Achievements
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-lg p-6 shadow text-gray-700">
+          <p>More Than 16 Million Views on YouTube</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow text-gray-700">
+          <p>Leading Travel Agency 2022 - 2025</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow text-gray-700">
+          <p>Die Burger Readers Choice 2021 - 2024</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow text-gray-700">
+          <p>Top Travel Agency Video 2023 - 2024</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow text-gray-700">
+          <p>Rated 4.8 Stars by Over 4800 Guests on Google Merchant</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow text-gray-700">
+          <p>Rated 4.0 Stars by Over 800 Reviews on HelloPeter</p>
+        </div>
       </div>
-      <p class="text-gray-700 mb-4">Receive lekke deals to your email address.</p>
-
-      <!-- Form -->
-      <form class="flex gap-2 max-w-md">
-        <input type="email" placeholder="Your email address"
-               class="flex-1 p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-400" required>
-        <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded font-semibold flex items-center gap-1">
-          SUBSCRIBE
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M2.94 2.94a.75.75 0 011.06 0L16 14.94V11a.75.75 0 011.5 0v6.5a.75.75 0 01-.75.75H10a.75.75 0 010-1.5h3.94L2.94 4a.75.75 0 010-1.06z"/>
-          </svg>
-        </button>
-      </form>
     </div>
+  </section>
 
-    <!-- Right Column (images) -->
-    <div class="lg:w-1/2 w-full grid grid-cols-2 gap-4">
-      <img src="https://tvg-newsletter.imgix.net/TG/744/7aa4a9fd-3a7d-4bdb-845d-bc395cc5ab58.jpg?w=400&h=300&fit=crop" 
-           class="rounded-lg shadow-md object-cover">
-      <img src="https://tvg-newsletter.imgix.net/TG/744/e0e1d8af-5c54-41c5-a6d6-87aa8f82aa5e.jpg?w=400&h=300&fit=crop" 
-           class="rounded-lg shadow-md object-cover">
-      <img src="https://tvg-newsletter.imgix.net/TG/744/c50d0f02-13de-4f93-93cf-0b35a7cfc71c.jpg?w=400&h=300&fit=crop" 
-           class="rounded-lg shadow-md object-cover">
-      <img src="https://tvg-newsletter.imgix.net/TG/744/56c07b2e-9888-4dbf-91a6-c4f4829159c0.jpg?w=400&h=300&fit=crop" 
-           class="rounded-lg shadow-md object-cover">
+  <!-- Call to Action -->
+  <section class="py-16 bg-blue-600">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Plan Your Escape!</h2>
+      <a href="/explore" class="bg-white text-blue-600 font-bold px-6 py-3 rounded-lg inline-block hover:bg-gray-100 transition">
+        Browse over 35k properties
+      </a>
     </div>
-
-  </div>
-</section>
-
-
-
-<script>
-  const carouselWrapper = document.getElementById('carousel-wrapper');
-  const carousel = document.getElementById('carousel');
-  const next = document.getElementById('next');
-  const prev = document.getElementById('prev');
-
-  // Width of one item + gap
-  const scrollAmount = carousel.children[0].offsetWidth + 8; 
-
-  next.addEventListener('click', () => {
-    carouselWrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-  });
-
-  prev.addEventListener('click', () => {
-    carouselWrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-  });
-</script>
-
+  </section>
 
 </main>
 {% endblock %}
