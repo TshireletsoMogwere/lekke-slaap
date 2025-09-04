@@ -6,11 +6,21 @@
 {% extends "./layouts/base.hubl.html" %}
 
 {% block body %}
+    {% module
+    "Header"
+    path="../components/partials/Header.jsx",
+  %}
 
   {% module
     "Footer"
     path="../components/partials/Footer.jsx",
   %}
+    {% module
+    "Aboutsection"
+    path="../components/islands/AboutSection.jsx",
+  %}
+
+
 
   
 {% endblock body %}
